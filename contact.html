@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Anna PK Floral Design</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">Anna PK</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <span class="section-label">Contact</span>
+                <h1>Let's Connect</h1>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <p>
+                            We'd love to hear from you. Whether you're planning a wedding, 
+                            hosting an event, or simply curious about our work, don't hesitate 
+                            to reach out.
+                        </p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h3>Email</h3>
+                                <p>hello@annapkfloral.com</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Phone</h3>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Studio</h3>
+                                <p>123 Bloom Street<br>New York, NY 10001</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Hours</h3>
+                                <p>Monday – Friday: 9am – 6pm<br>Saturday: By appointment</p>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <h3>Follow Along</h3>
+                            <div class="social-icons">
+                                <a href="#" aria-label="Instagram">Instagram</a>
+                                <a href="#" aria-label="Pinterest">Pinterest</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="eventType">Event Type</label>
+                                <select id="eventType" name="eventType">
+                                    <option value="">Select an option</option>
+                                    <option value="wedding">Wedding</option>
+                                    <option value="corporate">Corporate Event</option>
+                                    <option value="private">Private Celebration</option>
+                                    <option value="workshop">Workshop</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="eventDate">Event Date</label>
+                                <input type="date" id="eventDate" name="eventDate">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="message">Tell us about your vision *</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <button type="submit" class="btn">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Placeholder -->
+        <section class="map-section">
+            <div class="map-placeholder">
+                <p>123 Bloom Street, New York, NY 10001</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo">Anna PK</span>
+                    <p>Luxury Floral Design</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-contact">
+                    <p>hello@annapkfloral.com</p>
+                    <p>Follow us @annapkfloral</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Anna PK Floral Design. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
