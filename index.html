@@ -19,11 +19,11 @@
             align-items: center;
         }
         
-        /* Three-Image Slideshow - Full width */
+        /* Three-Image Slideshow - Tulipina-style spacing */
         .slideshow-container {
             width: 100%;
-            padding: 0;
-            padding-bottom: 4px;
+            padding: 50px; /* Outer padding like Tulipina */
+            padding-top: 30px;
             box-sizing: border-box;
         }
         
@@ -42,8 +42,8 @@
         
         .slide-item {
             position: relative;
-            /* Height based on viewport, accounting for header */
-            height: calc(100vh - 100px);
+            /* Height based on viewport, accounting for header and padding */
+            height: calc(100vh - 210px);
             overflow: hidden;
         }
         
@@ -88,6 +88,11 @@
             .home-main {
                 padding-top: 70px;
                 min-height: auto;
+            }
+            
+            .slideshow-container {
+                padding: 20px;
+                padding-top: 15px;
             }
             
             .slideshow-set.active {
