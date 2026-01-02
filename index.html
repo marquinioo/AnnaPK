@@ -11,17 +11,19 @@
     <style>
         /* Home Page Slideshow Styles */
         
-        /* Add padding for fixed header */
+        /* Main container fills viewport */
         .home-main {
-            padding-top: 100px;
+            padding-top: 80px; /* Space for fixed header */
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
         }
         
-        /* Three-Image Slideshow */
+        /* Three-Image Slideshow - Full width */
         .slideshow-container {
             width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0;
+            padding-bottom: 4px;
             box-sizing: border-box;
         }
         
@@ -34,13 +36,14 @@
         .slideshow-set.active {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0.5rem;
+            gap: 4px;
             opacity: 1;
         }
         
         .slide-item {
             position: relative;
-            aspect-ratio: 1 / 1.2;
+            /* Height based on viewport, accounting for header */
+            height: calc(100vh - 100px);
             overflow: hidden;
         }
         
@@ -82,13 +85,18 @@
         }
         
         @media (max-width: 768px) {
+            .home-main {
+                padding-top: 70px;
+                min-height: auto;
+            }
+            
             .slideshow-set.active {
                 grid-template-columns: 1fr;
-                gap: 0.5rem;
+                gap: 4px;
             }
             
             .slide-item {
-                aspect-ratio: 4 / 3;
+                height: 50vh;
             }
             
             .slide-credit {
