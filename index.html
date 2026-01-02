@@ -3,21 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anna PK Floral Design | Luxury Floral Artistry</title>
+    <title>Anna PK | Floral Design</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Home Page Slideshow Styles */
+        
+        /* Add padding for fixed header */
+        .home-main {
+            padding-top: 100px;
+        }
+        
+        /* Three-Image Slideshow */
+        .slideshow-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            box-sizing: border-box;
+        }
+        
+        .slideshow-set {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .slideshow-set.active {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            opacity: 1;
+        }
+        
+        .slide-item {
+            position: relative;
+            aspect-ratio: 1 / 1.2;
+            overflow: hidden;
+        }
+        
+        .slide-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .slide-item:hover img {
+            transform: scale(1.02);
+        }
+        
+        /* Photographer Credit */
+        .slide-credit {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            text-align: center;
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 0.05em;
+            color: #fff;
+            background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .slide-item:hover .slide-credit {
+            opacity: 1;
+        }
+        
+        .slide-credit a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .slideshow-set.active {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            
+            .slide-item {
+                aspect-ratio: 4 / 3;
+            }
+            
+            .slide-credit {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="index.html" class="logo">Anna PK</a>
+            <a href="index.html" class="logo">ANNA PK</a>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Weddings & Events</a></li>
+                <li><a href="portfolio.html">Workshops</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -28,124 +115,23 @@
         </nav>
     </header>
 
-    <main>
-        <!-- Hero Carousel -->
-        <section class="hero-carousel">
-            <div class="carousel-container">
-                <div class="carousel-slide active">
-                    <img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=1920&q=80" alt="Elegant floral arrangement">
-                    <div class="carousel-overlay"></div>
-                    <div class="carousel-content">
-                        <h1>Timeless Floral Artistry</h1>
-                        <p>Creating unforgettable moments through the language of flowers</p>
-                        <a href="portfolio.html" class="btn">View Our Work</a>
-                    </div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=1920&q=80" alt="Wedding floral design">
-                    <div class="carousel-overlay"></div>
-                    <div class="carousel-content">
-                        <h1>Bespoke Wedding Florals</h1>
-                        <p>Crafting your perfect day with elegance and intention</p>
-                        <a href="services.html" class="btn">Our Services</a>
-                    </div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=1920&q=80" alt="Luxury floral studio">
-                    <div class="carousel-overlay"></div>
-                    <div class="carousel-content">
-                        <h1>Where Nature Meets Art</h1>
-                        <p>Each arrangement tells a unique story</p>
-                        <a href="about.html" class="btn">Meet Anna</a>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-indicators">
-                <button class="indicator active" data-slide="0" aria-label="Slide 1"></button>
-                <button class="indicator" data-slide="1" aria-label="Slide 2"></button>
-                <button class="indicator" data-slide="2" aria-label="Slide 3"></button>
-            </div>
-        </section>
-
-        <!-- Introduction Section -->
-        <section class="intro">
-            <div class="container">
-                <div class="intro-content">
-                    <span class="section-label">Welcome</span>
-                    <h2>Anna PK Floral Design</h2>
-                    <p class="intro-text">
-                        We believe flowers are more than decoration—they're an expression of emotion, 
-                        a celebration of life's most precious moments. With an artist's eye and a 
-                        gardener's touch, we create floral experiences that linger in memory long 
-                        after the petals fade.
-                    </p>
-                    <a href="about.html" class="link-arrow">Discover Our Story</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Portfolio Thumbnail Carousel -->
-        <section class="portfolio-carousel-section">
-            <div class="container">
-                <span class="section-label">Portfolio</span>
-                <h2>Featured Work</h2>
-                <div class="portfolio-thumb-carousel">
-                    <div class="thumb-carousel-track">
-                        <!-- Thumbnails will be populated by JavaScript -->
-                    </div>
-                </div>
-                <a href="portfolio.html" class="link-arrow center">View All Work</a>
-            </div>
-        </section>
-
-        <!-- Quote Section -->
-        <section class="quote-section">
-            <div class="container">
-                <blockquote>
-                    "Flowers are the music of the ground, from earth's lips spoken without sound."
-                    <cite>— Edwin Curran</cite>
-                </blockquote>
-            </div>
-        </section>
-
-        <!-- Services Preview -->
-        <section class="services-preview">
-            <div class="container">
-                <div class="services-content">
-                    <span class="section-label">What We Do</span>
-                    <h2>Our Services</h2>
-                    <p>
-                        From intimate elopements to grand celebrations, we bring your floral 
-                        vision to life with meticulous attention to detail and an unwavering 
-                        commitment to beauty.
-                    </p>
-                    <ul class="services-list">
-                        <li>Wedding & Event Florals</li>
-                        <li>Installation Design</li>
-                        <li>Private Consultations</li>
-                        <li>Floral Workshops</li>
-                    </ul>
-                    <a href="services.html" class="link-arrow">Explore Services</a>
-                </div>
-                <div class="services-image">
-                    <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=800&q=80" alt="Floral arrangement process">
-                </div>
-            </div>
-        </section>
+    <main class="home-main">
+        <div class="slideshow-container" id="slideshow">
+            <!-- Slide sets will be generated by JavaScript -->
+        </div>
     </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <span class="logo">Anna PK</span>
+                    <span class="logo">ANNA PK</span>
                     <p>Luxury Floral Design</p>
                 </div>
                 <div class="footer-links">
-                    <a href="index.html">Home</a>
+                    <a href="services.html">Weddings & Events</a>
+                    <a href="portfolio.html">Workshops</a>
                     <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="portfolio.html">Portfolio</a>
                     <a href="contact.html">Contact</a>
                 </div>
                 <div class="footer-contact">
@@ -159,7 +145,145 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // ============================================================
+        // IMAGE CONFIGURATION - EDIT THIS SECTION TO CHANGE IMAGES
+        // ============================================================
+        // Images are organized in SETS OF 3.
+        // Each set displays 3 images side by side.
+        // The slideshow rotates through each set.
+        //
+        // Each image needs:
+        //   - src: The image URL or path
+        //   - credit: Photographer credit text
+        //   - handle: Instagram handle (optional)
+        //
+        // Recommended image size: 600 x 750 pixels (portrait orientation)
+        // ============================================================
+        
+        const imageSets = [
+            // SET 1 - First row of 3 images
+            [
+                {
+                    src: "https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=600&q=80",
+                    credit: "Jose Villa",
+                    handle: "@josevilla"
+                },
+                {
+                    src: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=600&q=80",
+                    credit: "Corbin Gurkin",
+                    handle: "@corbingurkin"
+                },
+                {
+                    src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80",
+                    credit: "Sandra Fazzino",
+                    handle: "@sandrafazzino"
+                }
+            ],
+            // SET 2 - Second row of 3 images
+            [
+                {
+                    src: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=600&q=80",
+                    credit: "Corbin Gurkin",
+                    handle: "@corbingurkin"
+                },
+                {
+                    src: "https://images.unsplash.com/photo-1522057384400-681b421cfebc?w=600&q=80",
+                    credit: "Jose Villa",
+                    handle: "@josevilla"
+                },
+                {
+                    src: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=600&q=80",
+                    credit: "Emily Scott",
+                    handle: "@emthegem"
+                }
+            ],
+            // SET 3 - Third row of 3 images
+            [
+                {
+                    src: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&q=80",
+                    credit: "Corbin Gurkin",
+                    handle: "@corbingurkin"
+                },
+                {
+                    src: "https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&q=80",
+                    credit: "Jose Villa",
+                    handle: "@josevilla"
+                },
+                {
+                    src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80",
+                    credit: "Emily Scott",
+                    handle: "@emthegem"
+                }
+            ]
+        ];
+        
+        // Slide duration in milliseconds (5000 = 5 seconds)
+        const slideDuration = 5000;
+        
+        // ============================================================
+        // END OF CONFIGURATION
+        // ============================================================
+        
+        // Generate slides from configuration
+        const slideshowEl = document.getElementById('slideshow');
+        
+        imageSets.forEach((set, setIndex) => {
+            const slideSet = document.createElement('div');
+            slideSet.className = 'slideshow-set' + (setIndex === 0 ? ' active' : '');
+            
+            set.forEach(image => {
+                const slideItem = document.createElement('div');
+                slideItem.className = 'slide-item';
+                slideItem.innerHTML = `
+                    <img src="${image.src}" alt="${image.credit}">
+                    <div class="slide-credit">${image.credit} / ${image.handle}</div>
+                `;
+                slideSet.appendChild(slideItem);
+            });
+            
+            slideshowEl.appendChild(slideSet);
+        });
+        
+        // Slideshow logic
+        const slideSets = document.querySelectorAll('.slideshow-set');
+        let currentSet = 0;
+        
+        function nextSet() {
+            // Fade out current set
+            slideSets[currentSet].style.opacity = '0';
+            
+            setTimeout(() => {
+                slideSets[currentSet].classList.remove('active');
+                currentSet = (currentSet + 1) % slideSets.length;
+                slideSets[currentSet].classList.add('active');
+                
+                // Fade in new set
+                setTimeout(() => {
+                    slideSets[currentSet].style.opacity = '1';
+                }, 50);
+            }, 500);
+        }
+        
+        setInterval(nextSet, slideDuration);
+        
+        // Mobile menu toggle (same as other pages)
+        const mobileBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileBtn && navLinks) {
+            mobileBtn.addEventListener('click', () => {
+                mobileBtn.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileBtn.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
-
