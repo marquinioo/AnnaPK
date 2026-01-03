@@ -9,6 +9,84 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        /* Hands-On Floral Design Hero Section */
+        .workshop-hero-wrapper {
+            width: 100%;
+        }
+        
+        .workshop-hero-image {
+            width: 100%;
+            height: 450px;
+            background-image: url('https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .workshop-hero-content {
+            width: 100%;
+            padding: var(--spacing-xl) var(--spacing-lg);
+            background: var(--color-warm-white);
+        }
+        
+        .workshop-hero-content h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-charcoal);
+            text-align: center;
+        }
+        
+        .workshop-hero-content p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--color-deep-olive);
+            margin-bottom: var(--spacing-md);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        
+        .workshop-hero-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto var(--spacing-md);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-sm) var(--spacing-lg);
+            max-width: 900px;
+        }
+        
+        .workshop-hero-content ul li {
+            font-family: var(--font-serif);
+            font-style: italic;
+            padding: var(--spacing-xs) 0;
+            padding-left: var(--spacing-sm);
+            border-left: 2px solid var(--color-soft-sage);
+            color: var(--color-charcoal);
+        }
+        
+        .workshop-hero-content .link-arrow {
+            display: block;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .workshop-hero-image {
+                height: 300px;
+            }
+            .workshop-hero-content {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+            .workshop-hero-content ul {
+                flex-direction: column;
+                align-items: center;
+                gap: var(--spacing-xs);
+            }
+        }
+        
         /* Workshop Card - Side by Side Layout (same as Wedding Florals) */
         .workshop-card {
             display: grid;
@@ -183,30 +261,24 @@
             </div>
         </section>
 
-        <!-- Workshops Content -->
-        <section class="services-section">
-            <div class="container">
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=800&q=80" alt="Floral workshop">
-                    </div>
-                    <div class="service-content">
-                        <h2>Hands-On Floral Design</h2>
-                        <p>
-                            Learn the art of floral design in our hands-on workshops. Perfect for 
-                            team building, bridal showers, or simply indulging your creative side. 
-                            All materials included, no experience necessary.
-                        </p>
-                        <ul>
-                            <li>Seasonal Arrangement Classes</li>
-                            <li>Private Group Workshops</li>
-                            <li>Corporate Team Building</li>
-                            <li>Bridal Party Events</li>
-                            <li>One-on-One Sessions</li>
-                        </ul>
-                        <a href="contact.html" class="link-arrow">Book a Workshop</a>
-                    </div>
-                </div>
+        <!-- Workshops Hero -->
+        <section class="workshop-hero-wrapper">
+            <div class="workshop-hero-image"></div>
+            <div class="workshop-hero-content">
+                <h2>Hands-On Floral Design</h2>
+                <p>
+                    Learn the art of floral design in our hands-on workshops. Perfect for 
+                    team building, bridal showers, or simply indulging your creative side. 
+                    All materials included, no experience necessary.
+                </p>
+                <ul>
+                    <li>Seasonal Arrangement Classes</li>
+                    <li>Private Group Workshops</li>
+                    <li>Corporate Team Building</li>
+                    <li>Bridal Party Events</li>
+                    <li>One-on-One Sessions</li>
+                </ul>
+                <a href="contact.html" class="link-arrow">Book a Workshop</a>
             </div>
         </section>
 
