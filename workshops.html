@@ -3,11 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Anna PK Floral Design</title>
+    <title>Workshops | Anna PK Floral Design</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Workshop Card - Side by Side Layout (same as Wedding Florals) */
+        .workshop-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .workshop-card.reverse {
+            direction: rtl;
+        }
+        
+        .workshop-card.reverse > * {
+            direction: ltr;
+        }
+        
+        .workshop-image-carousel {
+            position: relative;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+        }
+        
+        .workshop-carousel {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s ease-in-out;
+        }
+        
+        .workshop-slide {
+            min-width: 100%;
+            height: 100%;
+        }
+        
+        .workshop-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .workshop-carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 3;
+        }
+        
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+        
+        .carousel-dot:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+        
+        .carousel-dot.active {
+            background: #fff;
+            border-color: #fff;
+        }
+        
+        .workshop-content {
+            padding: var(--spacing-md);
+        }
+        
+        .workshop-content h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 400;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-charcoal);
+        }
+        
+        .workshop-content .price {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--color-deep-olive);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: 0.05em;
+        }
+        
+        .workshop-content p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--color-deep-olive);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .workshop-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 var(--spacing-md) 0;
+        }
+        
+        .workshop-content ul li {
+            font-family: var(--font-serif);
+            font-style: italic;
+            padding: var(--spacing-xs) 0;
+            padding-left: var(--spacing-sm);
+            border-left: 2px solid var(--color-soft-sage);
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-charcoal);
+        }
+        
+        /* Offerings Section */
+        .offerings-section {
+            padding: var(--spacing-lg) 0;
+            background: var(--color-warm-white);
+        }
+        
+        .offerings-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .offerings-header h2 {
+            margin-top: var(--spacing-sm);
+        }
+        
+        @media (max-width: 768px) {
+            .workshop-card,
+            .workshop-card.reverse {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+                direction: ltr;
+            }
+            .workshop-image-carousel {
+                aspect-ratio: 1;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -63,28 +210,226 @@
             </div>
         </section>
 
-        <!-- Process -->
-        <section class="process-section">
+        <!-- What We Offer Section -->
+        <section class="offerings-section">
             <div class="container">
-                <span class="section-label">The Process</span>
-                <h2>How We Work</h2>
-                <div class="process-grid">
-                    <div class="process-item">
-                        <h3>Consultation</h3>
-                        <p>We begin with a conversation to understand your vision, style, and the emotions you wish to evoke.</p>
+                <div class="offerings-header">
+                    <span class="section-label">Experiences</span>
+                    <h2>What We Offer</h2>
+                </div>
+            </div>
+            
+            <!-- Full Day One on One Floral Workshop -->
+            <div class="workshop-card" data-workshop="0">
+                <div class="workshop-image-carousel">
+                    <div class="workshop-carousel">
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=800&q=80" alt="One on One Workshop"></div>
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=800&q=80" alt="One on One Workshop"></div>
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=800&q=80" alt="One on One Workshop"></div>
                     </div>
-                    <div class="process-item">
-                        <h3>Design</h3>
-                        <p>We create a custom proposal with mood boards, color palettes, and detailed descriptions.</p>
+                    <div class="workshop-carousel-dots">
+                        <button class="carousel-dot active" data-slide="0"></button>
+                        <button class="carousel-dot" data-slide="1"></button>
+                        <button class="carousel-dot" data-slide="2"></button>
                     </div>
-                    <div class="process-item">
-                        <h3>Source</h3>
-                        <p>We carefully select the finest blooms, prioritizing seasonal, local, and sustainable options.</p>
+                </div>
+                <div class="workshop-content">
+                    <h2>One-on-One Intensive</h2>
+                    <p class="price">Full Day One-on-One Floral Workshop — $3,500</p>
+                    <p>A deeply immersive, personalized experience designed for those seeking focused learning, creative expansion, or professional refinement.</p>
+                    <p>This full-day private workshop is fully tailored to your goals — whether artistic, technical, or personal. Together, we explore fine floral design, composition, sourcing, and intention-led creation in a calm, supportive environment.</p>
+                    <p>Ideal for florists, creatives, or anyone desiring a profound connection to floral art.</p>
+                    <a href="contact.html" class="link-arrow">Book This Workshop</a>
+                </div>
+            </div>
+            
+            <!-- Vase Arrangement -->
+            <div class="workshop-card reverse" data-workshop="1">
+                <div class="workshop-image-carousel">
+                    <div class="workshop-carousel">
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=800&q=80" alt="Vase Arrangement"></div>
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80" alt="Vase Arrangement"></div>
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=800&q=80" alt="Vase Arrangement"></div>
                     </div>
-                    <div class="process-item">
-                        <h3>Create</h3>
-                        <p>Our team brings your vision to life with meticulous attention to every detail.</p>
+                    <div class="workshop-carousel-dots">
+                        <button class="carousel-dot active" data-slide="0"></button>
+                        <button class="carousel-dot" data-slide="1"></button>
+                        <button class="carousel-dot" data-slide="2"></button>
                     </div>
+                </div>
+                <div class="workshop-content">
+                    <h2>Vase Arrangement</h2>
+                    <p class="price">$150 per person</p>
+                    <p>Learn the fundamentals of creating a stunning vase arrangement. Perfect for beginners, this workshop covers flower selection, color theory, and arrangement techniques.</p>
+                    <ul>
+                        <li>2-hour session</li>
+                        <li>All flowers and vase included</li>
+                        <li>Take home your arrangement</li>
+                    </ul>
+                    <a href="contact.html" class="link-arrow">Book This Workshop</a>
+                </div>
+            </div>
+            
+            <!-- Table Centerpiece -->
+            <div class="workshop-card" data-workshop="2">
+                <div class="workshop-image-carousel">
+                    <div class="workshop-carousel">
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1522057384400-681b421cfebc?w=800&q=80" alt="Table Centerpiece"></div>
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=800&q=80" alt="Table Centerpiece"></div>
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=800&q=80" alt="Table Centerpiece"></div>
+                    </div>
+                    <div class="workshop-carousel-dots">
+                        <button class="carousel-dot active" data-slide="0"></button>
+                        <button class="carousel-dot" data-slide="1"></button>
+                        <button class="carousel-dot" data-slide="2"></button>
+                    </div>
+                </div>
+                <div class="workshop-content">
+                    <h2>Table Centerpiece</h2>
+                    <p class="price">$150 per person</p>
+                    <p>Create elegant table centerpieces perfect for dinner parties and special occasions. Learn professional techniques for low, lush arrangements that encourage conversation.</p>
+                    <ul>
+                        <li>2-hour session</li>
+                        <li>All materials included</li>
+                        <li>Take home your centerpiece</li>
+                    </ul>
+                    <a href="contact.html" class="link-arrow">Book This Workshop</a>
+                </div>
+            </div>
+            
+            <!-- Flower Crown -->
+            <div class="workshop-card reverse" data-workshop="3">
+                <div class="workshop-image-carousel">
+                    <div class="workshop-carousel">
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=800&q=80" alt="Flower Crown"></div>
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80" alt="Flower Crown"></div>
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80" alt="Flower Crown"></div>
+                    </div>
+                    <div class="workshop-carousel-dots">
+                        <button class="carousel-dot active" data-slide="0"></button>
+                        <button class="carousel-dot" data-slide="1"></button>
+                        <button class="carousel-dot" data-slide="2"></button>
+                    </div>
+                </div>
+                <div class="workshop-content">
+                    <h2>Flower Crown</h2>
+                    <p class="price">$100 per person</p>
+                    <p>Craft your own beautiful flower crown in this fun, whimsical workshop. Perfect for bridal showers, bachelorette parties, or a creative afternoon with friends.</p>
+                    <ul>
+                        <li>1.5-hour session</li>
+                        <li>All flowers and wire included</li>
+                        <li>Wear your creation home</li>
+                    </ul>
+                    <a href="contact.html" class="link-arrow">Book This Workshop</a>
+                </div>
+            </div>
+            
+            <!-- Hand Tie Bouquet -->
+            <div class="workshop-card" data-workshop="4">
+                <div class="workshop-image-carousel">
+                    <div class="workshop-carousel">
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Hand Tie Bouquet"></div>
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1464699908537-0954e50791ee?w=800&q=80" alt="Hand Tie Bouquet"></div>
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80" alt="Hand Tie Bouquet"></div>
+                    </div>
+                    <div class="workshop-carousel-dots">
+                        <button class="carousel-dot active" data-slide="0"></button>
+                        <button class="carousel-dot" data-slide="1"></button>
+                        <button class="carousel-dot" data-slide="2"></button>
+                    </div>
+                </div>
+                <div class="workshop-content">
+                    <h2>Hand Tie Bouquet</h2>
+                    <p class="price">$100 per person</p>
+                    <p>Master the art of the hand-tied bouquet, a foundational skill for any aspiring florist. Learn proper stem placement and wrapping techniques for a professional finish.</p>
+                    <ul>
+                        <li>1.5-hour session</li>
+                        <li>Seasonal flowers included</li>
+                        <li>Take home your bouquet</li>
+                    </ul>
+                    <a href="contact.html" class="link-arrow">Book This Workshop</a>
+                </div>
+            </div>
+            
+            <!-- Wedding Bouquet & Personal Flowers -->
+            <div class="workshop-card reverse" data-workshop="5">
+                <div class="workshop-image-carousel">
+                    <div class="workshop-carousel">
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80" alt="Wedding Bouquet"></div>
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1522057384400-681b421cfebc?w=800&q=80" alt="Wedding Bouquet"></div>
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80" alt="Wedding Bouquet"></div>
+                    </div>
+                    <div class="workshop-carousel-dots">
+                        <button class="carousel-dot active" data-slide="0"></button>
+                        <button class="carousel-dot" data-slide="1"></button>
+                        <button class="carousel-dot" data-slide="2"></button>
+                    </div>
+                </div>
+                <div class="workshop-content">
+                    <h2>Wedding Bouquet & Personal Flowers</h2>
+                    <p class="price">$200 per person</p>
+                    <p>Create your own bridal bouquet and personal flowers for your special day. This intimate workshop is perfect for brides who want a hands-on approach to their wedding florals.</p>
+                    <ul>
+                        <li>3-hour session</li>
+                        <li>Premium flowers included</li>
+                        <li>Bouquet and boutonniere</li>
+                        <li>Expert guidance throughout</li>
+                    </ul>
+                    <a href="contact.html" class="link-arrow">Book This Workshop</a>
+                </div>
+            </div>
+            
+            <!-- Succulent Terrarium -->
+            <div class="workshop-card" data-workshop="6">
+                <div class="workshop-image-carousel">
+                    <div class="workshop-carousel">
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1470162656305-6f429ba817bf?w=800&q=80" alt="Succulent Terrarium"></div>
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1510076857177-7470076d4098?w=800&q=80" alt="Succulent Terrarium"></div>
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=800&q=80" alt="Succulent Terrarium"></div>
+                    </div>
+                    <div class="workshop-carousel-dots">
+                        <button class="carousel-dot active" data-slide="0"></button>
+                        <button class="carousel-dot" data-slide="1"></button>
+                        <button class="carousel-dot" data-slide="2"></button>
+                    </div>
+                </div>
+                <div class="workshop-content">
+                    <h2>Succulent Terrarium</h2>
+                    <p class="price">$100 per person</p>
+                    <p>Design your own miniature garden in glass. Learn about succulent care, layering techniques, and creating a self-sustaining ecosystem that will last for months.</p>
+                    <ul>
+                        <li>1.5-hour session</li>
+                        <li>Glass container and succulents included</li>
+                        <li>Care instructions provided</li>
+                    </ul>
+                    <a href="contact.html" class="link-arrow">Book This Workshop</a>
+                </div>
+            </div>
+            
+            <!-- Holiday Wreath -->
+            <div class="workshop-card reverse" data-workshop="7">
+                <div class="workshop-image-carousel">
+                    <div class="workshop-carousel">
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=800&q=80" alt="Holiday Wreath"></div>
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=800&q=80" alt="Holiday Wreath"></div>
+                        <div class="workshop-slide"><img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=800&q=80" alt="Holiday Wreath"></div>
+                    </div>
+                    <div class="workshop-carousel-dots">
+                        <button class="carousel-dot active" data-slide="0"></button>
+                        <button class="carousel-dot" data-slide="1"></button>
+                        <button class="carousel-dot" data-slide="2"></button>
+                    </div>
+                </div>
+                <div class="workshop-content">
+                    <h2>Holiday Wreath</h2>
+                    <p class="price">$150 per person</p>
+                    <p>Celebrate the season by crafting a gorgeous holiday wreath. Using fresh evergreens, berries, and seasonal accents, create a festive welcome for your front door.</p>
+                    <ul>
+                        <li>2-hour session</li>
+                        <li>All greenery and decorations included</li>
+                        <li>Seasonal refreshments</li>
+                    </ul>
+                    <a href="contact.html" class="link-arrow">Book This Workshop</a>
                 </div>
             </div>
         </section>
@@ -101,6 +446,30 @@
 
     <footer class="footer">
         <div class="container">
+            <!-- Instagram Feed -->
+            <div class="footer-instagram">
+                <div class="footer-instagram-title">
+                    <a href="https://instagram.com/annapkfloral" target="_blank">@annapkfloral</a>
+                </div>
+                <div class="instagram-feed">
+                    <a href="https://instagram.com/annapkfloral" target="_blank" class="instagram-item">
+                        <img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=300&q=80" alt="Instagram post">
+                    </a>
+                    <a href="https://instagram.com/annapkfloral" target="_blank" class="instagram-item">
+                        <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=300&q=80" alt="Instagram post">
+                    </a>
+                    <a href="https://instagram.com/annapkfloral" target="_blank" class="instagram-item">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=300&q=80" alt="Instagram post">
+                    </a>
+                    <a href="https://instagram.com/annapkfloral" target="_blank" class="instagram-item">
+                        <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=300&q=80" alt="Instagram post">
+                    </a>
+                    <a href="https://instagram.com/annapkfloral" target="_blank" class="instagram-item">
+                        <img src="https://images.unsplash.com/photo-1522057384400-681b421cfebc?w=300&q=80" alt="Instagram post">
+                    </a>
+                </div>
+            </div>
+            
             <div class="footer-content">
                 <div class="footer-brand">
                     <span class="logo">ANNA PK</span>
@@ -124,6 +493,21 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Workshop Carousels
+        document.querySelectorAll('.workshop-card').forEach((card) => {
+            const carousel = card.querySelector('.workshop-carousel');
+            const dots = card.querySelectorAll('.carousel-dot');
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    carousel.style.transform = 'translateX(-' + (index * 100) + '%)';
+                    dots.forEach((d, i) => {
+                        d.classList.toggle('active', i === index);
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
