@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         createThumbElement(imageData) {
             const thumb = document.createElement('a');
-            thumb.href = 'portfolio.html';
+            thumb.href = 'workshops.html';
             thumb.className = 'thumb-item fade-in';
             thumb.innerHTML = `
                 <img src="${imageData.src}" alt="${imageData.title}">
