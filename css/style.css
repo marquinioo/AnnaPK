@@ -186,12 +186,38 @@ p {
     margin: 0 auto;
 }
 
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
 .logo {
     font-family: var(--font-serif);
-    font-size: 1.75rem;
+    font-size: 2.75rem;
     font-weight: 400;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.15em;
     color: var(--color-charcoal);
+    line-height: 1;
+}
+
+.logo .small-caps {
+    font-size: 0.75em;
+    text-transform: uppercase;
+}
+
+.logo-tagline {
+    font-family: var(--font-serif);
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    color: #888888;
+    line-height: 1;
+    margin-top: 0.2rem;
+    white-space: nowrap;
+    text-transform: uppercase;
 }
 
 .nav-links {
@@ -1069,9 +1095,29 @@ p {
 }
 
 .footer-brand .logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.15rem;
+    letter-spacing: 0.15em;
+}
+
+.footer-brand .logo .small-caps {
+    font-size: 0.75em;
+    text-transform: uppercase;
+}
+
+.footer-brand .logo-tagline {
+    font-family: var(--font-serif);
+    font-size: 0.6rem;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.7);
+    line-height: 1;
     display: block;
     margin-bottom: var(--spacing-xs);
+    white-space: nowrap;
+    text-transform: uppercase;
 }
 
 .footer-brand p {
