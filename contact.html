@@ -72,7 +72,16 @@
                     </div>
 
                     <div class="contact-form-wrapper">
-                        <form class="contact-form" id="contactForm">
+                        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                            <!-- Web3Forms Access Key -->
+                            <input type="hidden" name="access_key" value="1dabe1be-36ca-471a-9d99-456a0a5285ea">
+                            <!-- Custom subject line -->
+                            <input type="hidden" name="subject" value="New Inquiry from Anna PK Website">
+                            <!-- Honeypot Spam Protection -->
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                            <!-- Redirect after submission -->
+                            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                            
                             <div class="form-group">
                                 <label for="name">Name *</label>
                                 <input type="text" id="name" name="name" required>
