@@ -268,36 +268,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     // ===================================
-    // Contact Form
+    // Contact Form - Web3Forms handles submission natively
+    // Form submits directly via POST to Web3Forms API
     // ===================================
-    const contactForm = {
-        form: document.getElementById('contactForm'),
-        
-        init() {
-            if (!this.form) return;
-            
-            this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-        },
-        
-        handleSubmit(e) {
-            e.preventDefault();
-            
-            // Gather form data
-            const formData = new FormData(this.form);
-            const data = Object.fromEntries(formData);
-            
-            // In a real implementation, you would send this to a server
-            console.log('Form submitted:', data);
-            
-            // Show success message
-            alert('Thank you for your message! We will be in touch soon.');
-            
-            // Reset form
-            this.form.reset();
-        }
-    };
-    
-    contactForm.init();
     
     
     // ===================================
