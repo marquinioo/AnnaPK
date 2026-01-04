@@ -1170,6 +1170,35 @@ p {
     border-bottom: 1px solid rgba(250, 248, 245, 0.1);
 }
 
+/* Curator.io Feed - Limit to one row */
+#curator-feed-default-feed-layout {
+    max-height: 180px;
+    overflow: hidden !important;
+}
+
+#curator-feed-default-feed-layout * {
+    max-height: 180px;
+}
+
+#curator-feed-default-feed-layout .crt-feed,
+#curator-feed-default-feed-layout .crt-feed-window,
+#curator-feed-default-feed-layout .crt-widget {
+    max-height: 180px !important;
+    overflow: hidden !important;
+}
+
+#curator-feed-default-feed-layout .crt-grid,
+#curator-feed-default-feed-layout .crt-grid-posts {
+    flex-wrap: nowrap !important;
+    overflow: hidden !important;
+    max-height: 180px !important;
+}
+
+#curator-feed-default-feed-layout .crt-load-more,
+#curator-feed-default-feed-layout .crt-logo {
+    display: none !important;
+}
+
 .footer-instagram-title {
     text-align: center;
     margin-bottom: var(--spacing-md);
